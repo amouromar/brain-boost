@@ -1,0 +1,230 @@
+/* General styles */
+body {
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: -80px;
+    margin-bottom: 30px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: xxx-large;
+    text-align: center;
+}
+
+.logo p {
+    text-transform: uppercase;
+    margin-top: -30px;
+    margin-right: 45px;
+}
+
+.options label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+button {
+    margin: 10px 0;
+    padding: 10px 20px;
+    color: #000000;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button svg {
+    height: 100px;
+    width: 100px;
+    color: #fff;
+}
+
+button#skip {
+    color: #000;
+}
+
+#results {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.result-icon {
+    margin-right: 5px;
+    animation: iconAnimation 0.5s ease forwards;
+}
+
+.result-icon svg {
+    height: 100px;
+    width: 100px;
+}
+
+
+/* Quiz question animation */
+.question {
+    margin-bottom: 20px;
+    opacity: 0;
+    /* Initially hide questions */
+    transition: opacity 0.5s ease;
+    /* Add smooth transition */
+}
+
+.question.active {
+    opacity: 1;
+    /* Show active question */
+}
+
+/* SVG icon styles */
+svg {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    fill: currentColor;
+}
+
+@keyframes iconAnimation {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.user-info {
+    display: none;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 50px;
+    margin-left: 225px;
+}
+
+#userLevel {
+    margin-left: -45px;
+}
+
+#totalScore {
+    float: right;
+}
+
+.mini-dashboard {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.chip {
+    margin-right: 10px;
+    padding: 8px 12px;
+    background-color: #e0e0e0;
+    border-radius: 16px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.chip:active {
+    background-color: #c0c0c0;
+}
+
+
+.input-container {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 5px;
+}
+
+.input-container input {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #bfbfbf;
+    border-radius: 15px;
+    outline: none;
+    transition: border-radius 0.3s ease, transform 0.3s ease;
+    transform-origin: center;
+    /* Ensure transform originates from the center */
+}
+
+.input-container input:focus {
+    border-radius: 15px;
+    transform: scale(1.05);
+}
+
+.input-container input:hover {
+    transform: scale(1.02);
+}
+
+.input-container input:not(:focus):not(:hover) {
+    border-radius: 5px;
+    /* Restore original border-radius */
+    transform: scale(1);
+    /* Restore original size */
+}
+
+
+
+.input-container button {
+    margin-top: 10px;
+    padding: 9px 16px;
+    background-color: #e5e5e582;
+    color: #000;
+    border: 3px solid #a9a9a94f;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.input-container button:active {
+    background-color: #c0c0c0;
+}
+
+.popular-topics {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+@media (max-width: 600px) {
+    .mini-dashboard {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .input-container button {
+        margin-top: 5px;
+    }
+}
