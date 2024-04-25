@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function fetchQuizData(category) {
         const apiUrl = category
             ? `https://opentdb.com/api.php?amount=10&category=${category}&difficulty=easy&type=multiple`
-            : "https://opentdb.com/api.php?amount=10&difficulty=easy&type=multiple";
+            : "https://opentdb.com/api.php?amount=10&difficulty=medium&type=multiple";
         fetch(apiUrl)
             .then((response) => {
                 if (!response.ok) {
