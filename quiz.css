@@ -94,6 +94,10 @@ body {
   color: #fff; /* White text color for better visibility */
 }
 
+#quiz {
+  height: 400px;
+}
+
 .btn-container {
   display: flex;
   flex-direction: row;
@@ -219,7 +223,7 @@ button#retake {
   border-color: #ffffff00;
   box-shadow: none;
   margin-left: 0;
-  height: auto;
+  height: 305px;
 }
 
 .question.active.correct {
@@ -321,6 +325,7 @@ svg {
   .mini-dashboard {
     flex-direction: column;
     align-items: flex-start;
+    gap: 15px;
   }
 
   .input-container button {
@@ -331,4 +336,35 @@ svg {
 .highlighted-option {
   background-color: #0078bea9; /* Ocean blue background color */
   color: #fff; /* White text color for better visibility */
+}
+
+.progress-container {
+  margin-top: 20px;
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative; /* Added for proper positioning of progress text */
+}
+
+.progress-bar {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(48deg, #56efb1, #2a86b8, #95ab7b);
+  background-size: 180% 180%;
+  animation: gradient-animation 6s ease infinite;
+  border-radius: 15px;
+  transition: width 0.3s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.progress-text {
+  color: #fff;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
