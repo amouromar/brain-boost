@@ -321,18 +321,6 @@ svg {
   transform: scale(1);
 }
 
-@media (max-width: 600px) {
-  .mini-dashboard {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-  }
-
-  .input-container button {
-    margin-top: 5px;
-  }
-}
-
 .highlighted-option {
   background-color: #0078bea9; /* Ocean blue background color */
   color: #fff; /* White text color for better visibility */
@@ -367,4 +355,22 @@ svg {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+@media (max-width: 600px) {
+  .mini-dashboard {
+    width: 255vw;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .input-container button {
+    margin-top: 5px;
+    width: auto;
+  }
+
+  #quiz {
+    height: 56vh;
+  }
 }
