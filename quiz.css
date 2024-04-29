@@ -286,6 +286,7 @@ svg {
     flex-direction: column;
     align-items: flex-start;
     gap: 15px;
+    width: 255vw;
   }
 
   .input-container button {
