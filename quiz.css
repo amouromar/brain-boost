@@ -1,23 +1,28 @@
 html,
 body {
   height: 100%;
-  overflow: hidden; /* Prevent scrolling on smaller screens */
+  overflow: hidden;
+  /* Prevent scrolling on smaller screens */
 }
 
 html {
   height: 100%;
 }
+
 @keyframes gradient-animation {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
 }
+
 body {
   font-family: "Roboto Condensed", sans-serif;
   font-optical-sizing: auto;
@@ -40,7 +45,8 @@ body {
 
 @media (max-width: 600px) {
   .container {
-    max-width: calc(100vw - 40px); /* Adjust the width to fit the viewport */
+    max-width: calc(100vw - 40px);
+    /* Adjust the width to fit the viewport */
     margin: 0 auto;
     padding: 75px 20px 174px;
     background-color: #ffffff1a;
@@ -63,6 +69,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   h1 {
     font-size: xxx-large;
     text-align: center;
@@ -71,6 +78,7 @@ body {
     line-height: 1.2;
   }
 }
+
 .logo p {
   font-size: medium;
   text-transform: uppercase;
@@ -79,20 +87,28 @@ body {
   text-shadow: 0px 3px 10px #898999;
   line-height: 1.2;
 }
+
 .options label {
   display: block;
   margin-bottom: 10px;
   border-radius: 10px;
   padding: 5px;
-  transition: background-color 0.3s ease; /* Add transition for background color change */
+  transition: background-color 0.3s ease;
+  /* Add transition for background color change */
 }
+
 .options label:hover {
-  background-color: #0077be; /* Ocean blue background color on hover */
-  color: #fff; /* White text color for better visibility */
+  background-color: #0077be;
+  /* Ocean blue background color on hover */
+  color: #fff;
+  /* White text color for better visibility */
 }
+
 .options label.highlighted-option {
-  background-color: #0077be; /* Ocean blue background color */
-  color: #fff; /* White text color for better visibility */
+  background-color: #0077be;
+  /* Ocean blue background color */
+  color: #fff;
+  /* White text color for better visibility */
 }
 
 #quiz {
@@ -104,6 +120,39 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+}
+
+@media only screen and (max-width: 375px) {
+  .question {
+    max-height: 400px;
+    overflow-y: auto;
+    font-size: medium;
+  }
+
+  .navigations {
+    position: fixed;
+    bottom: 0;
+  }
+
+  .btn-container {
+    max-width: calc(100vw - 40px);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .question {
+    max-height: 600px;
+    font-size: medium;
+  }
+
+  .navigations {
+    position: fixed;
+    bottom: 0;
+  }
+
+  .btn-container {
+    max-width: calc(100vw - 40px);
+  }
 }
 
 button {
@@ -123,31 +172,26 @@ button {
   -webkit-transition: all 0.1s;
   -moz-transition: all 0.1s;
   transition: all 0.1s;
-  -webkit-box-shadow: linear-gradient(
-    to left bottom,
-    #dae3f0,
-    #cadbee,
-    #b8d3ec,
-    #a4cbea,
-    #8ec4e7
-  );
-  -moz-box-shadow: linear-gradient(
-    to left bottom,
-    #dae3f0,
-    #cadbee,
-    #b8d3ec,
-    #a4cbea,
-    #8ec4e7
-  );
-  box-shadow: linear-gradient(
-    to left bottom,
-    #dae3f0,
-    #cadbee,
-    #b8d3ec,
-    #a4cbea,
-    #8ec4e7
-  );
+  -webkit-box-shadow: linear-gradient(to left bottom,
+      #dae3f0,
+      #cadbee,
+      #b8d3ec,
+      #a4cbea,
+      #8ec4e7);
+  -moz-box-shadow: linear-gradient(to left bottom,
+      #dae3f0,
+      #cadbee,
+      #b8d3ec,
+      #a4cbea,
+      #8ec4e7);
+  box-shadow: linear-gradient(to left bottom,
+      #dae3f0,
+      #cadbee,
+      #b8d3ec,
+      #a4cbea,
+      #8ec4e7);
 }
+
 button:active {
   -webkit-box-shadow: 0px 2px 0px #d35400;
   -moz-box-shadow: 0px 2px 0px #d35400;
@@ -155,22 +199,27 @@ button:active {
   position: relative;
   top: 4px;
 }
+
 button#retake {
   width: auto;
 }
+
 #results {
   margin-top: 35px;
   font-weight: bold;
 }
+
 .result-icon {
   margin-right: 5px;
   animation: iconAnimation 0.5s ease forwards;
 }
+
 .result-icon svg {
   height: 100px;
   width: 100px;
   color: white;
 }
+
 .results-container {
   display: none;
   max-height: 530px;
@@ -179,23 +228,34 @@ button#retake {
   margin-top: 20px;
   text-align: left;
   scrollbar-width: thin;
-  background-color: #cdcdcc24;
 }
+
 .results-container p {
   margin: 5px 0;
   text-align: left;
 }
+
 .result-item {
   margin-bottom: 20px;
 }
-.result-item.correct {
+
+#quiz .question h2 {
+  color: #ffffff;
+  /* White color for question */
+}
+
+#results .result-item.correct p span {
   color: #00ff00;
-  font-size: larger;
+  /* Light green color for correct answer */
+  font-weight: normal;
 }
-.result-item.incorrect {
+
+#results .result-item.incorrect p span {
   color: #ff0000;
-  font-size: large;
+  /* Red color for incorrect answer */
+  font-weight: bold;
 }
+
 .question {
   margin-bottom: 20px;
   opacity: 0;
@@ -208,6 +268,7 @@ button#retake {
   font-style: normal;
   font-variation-settings: "wdth" 7100;
 }
+
 .question.active {
   opacity: 1;
   border-color: #ffffff00;
@@ -222,31 +283,38 @@ button#retake {
   box-shadow: 0 0 0 2px #00ff00, 0 0 0 7px rgba(0, 255, 0, 0.5);
   margin-left: 5px;
 }
+
 .question.active.correct p {
   color: #00ff00;
 }
+
 .question.active.incorrect {
   border-color: #ff0000;
   box-shadow: 0 0 0 2px #ff0000, 0 0 0 7px rgba(255, 0, 0, 0.5);
   margin-left: 5px;
 }
+
 .question.active.incorrect p {
   color: #ff0000;
 }
+
 svg {
   width: 1em;
   height: 1em;
   vertical-align: middle;
   fill: currentColor;
 }
+
 @keyframes iconAnimation {
   0% {
     transform: scale(0);
   }
+
   100% {
     transform: scale(1);
   }
 }
+
 .user-info {
   display: none;
   align-items: center;
@@ -254,18 +322,22 @@ svg {
   gap: 50px;
   margin-left: 225px;
 }
+
 #userLevel {
   margin-left: -45px;
 }
+
 #totalScore {
   float: right;
 }
+
 .mini-dashboard {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
 }
+
 .mini-dashboard select {
   width: 35%;
   padding: 12px;
@@ -274,25 +346,26 @@ svg {
   outline: none;
   transition: border-radius 0.3s ease, transform 0.3s ease;
   transform-origin: center;
-  background-image: linear-gradient(
-    to bottom,
-    #ffffff,
-    #ffffff,
-    #ffffff,
-    #ffffff,
-    #ffffff
-  );
+  background-image: linear-gradient(to bottom,
+      #ffffff,
+      #ffffff,
+      #ffffff,
+      #ffffff,
+      #ffffff);
   color: #a0a0a0;
   text-shadow: 0px 3px 10px #ffffff;
   line-height: 1.2;
 }
+
 .mini-dashboard select:focus {
   border-radius: 15px;
   transform: scale(1.05);
 }
+
 .mini-dashboard select:hover {
   transform: scale(1.02);
 }
+
 .mini-dashboard select:not(:focus):not(:hover) {
   border-radius: 5px;
   transform: scale(1);
@@ -312,8 +385,10 @@ svg {
 }
 
 .highlighted-option {
-  background-color: #0078bea9; /* Ocean blue background color */
-  color: #fff; /* White text color for better visibility */
+  background-color: #0078bea9;
+  /* Ocean blue background color */
+  color: #fff;
+  /* White text color for better visibility */
 }
 
 .progress-container {
@@ -322,7 +397,8 @@ svg {
   background-color: #ddd;
   border-radius: 15px;
   overflow: hidden;
-  position: relative; /* Added for proper positioning of progress text */
+  position: relative;
+  /* Added for proper positioning of progress text */
 }
 
 .progress-bar {
