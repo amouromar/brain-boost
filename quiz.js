@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const categoryDropdown = document.getElementById("categoryDropdown");
     const customTopicInput = document.getElementById("customTopic");
     const progressBar = document.querySelector(".progress-bar");
+    const progressContainer = document.querySelector(".progress-container");
     let quizData = []; // Initialize quizData as an empty array
     let currentQuestionIndex = 0;
     let score = 0;
@@ -247,6 +248,7 @@ document.addEventListener("DOMContentLoaded", function () {
         quizContainer.style.display = "none"; // Hide the quiz container
         skipButton.style.display = "none"; // Hide skip button
         categoryDropdown.style.display = "none"; // Hide categories
+        progressContainer.style.display = "none"; // Hide progress bar
         title.style.display = "none"; // Hide title
         submitButton.style.display = "none"; // Hide submit button
         prevButton.style.display = "none"; // Hide previous button
