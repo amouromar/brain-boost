@@ -127,8 +127,8 @@ document.addEventListener("DOMContentLoaded", function () {
             `input[name="question${currentQuestionIndex}"]:checked`
         );
         if (!selectedOption) {
-            alert("Please select an option before moving to the next question.");
-            return;
+            alert("Please select an answer before moving on."); // Alert the user to select an answer
+            return; // Skip further execution
         }
 
         const isCorrect =
@@ -139,7 +139,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Add visual indication
         const feedbackElement = document.createElement("p");
-        feedbackElement.textContent = isCorrect ? "" : "";
+        feedbackElement.textContent = isCorrect
+            ? ""
+            : `Correct Answer: ${quizData[currentQuestionIndex].answer}`;
         feedbackElement.classList.add(isCorrect ? "correct" : "incorrect");
         questionElement.appendChild(feedbackElement);
 
@@ -179,6 +181,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     skipButton.addEventListener("click", function () {
+        userAnswers[currentQuestionIndex] = "Skipped"; // Mark the question as skipped
         currentQuestionIndex++;
         if (currentQuestionIndex < quizData.length) {
             buildQuiz(); // Skip to the next question
@@ -189,9 +192,6 @@ document.addEventListener("DOMContentLoaded", function () {
         // Update progress bar when skipping questions
         updateProgressBar();
     });
-
-
-    // quiz.js
 
     function showResults() {
         let resultHTML = "";
@@ -229,12 +229,18 @@ document.addEventListener("DOMContentLoaded", function () {
             const userAnswer = userAnswers[index];
             const isCorrect = userAnswer === question.answer;
             resultHTML += `
-            <div class="result-item ${isCorrect ? "correct" : "incorrect"}">
+            <div class="result-item ${isCorrect ? "correct" : "incorrect"
+                }" style="background-color: #f2f2f254; padding: 10px; margin-bottom: 10px; border-radius: 15px;">
                 <p>${index + 1}. ${question.question}</p>
-                <p>Your Answer: ${userAnswer}</p>
-                <p>Correct Answer: ${question.answer}</p>
-                <p class="answer-feedback">${isCorrect ? "Correct!" : "Incorrect!"
-                }</p>
+                <p>Your Answer: <span style="color: blue;">${userAnswer === "Skipped" ? "Skipped" : userAnswer
+                }</span></p>
+                
+                <p>Correct Answer: <span style="color: black; font-weight: normal;">${question.answer
+                }</span></p>
+
+                <p class="answer-feedback"><span style="color: ${isCorrect ? "green" : "red"
+                }; font-weight: ${isCorrect ? "normal" : "bold"};">${isCorrect ? "Correct!" : "Incorrect!"
+                }</span></p>
             </div>
         `;
         });
